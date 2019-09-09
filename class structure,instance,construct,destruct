@@ -29,18 +29,22 @@ and open the template in the editor.
 
 //new anahtar kelimesi ile sınıf tanımlanır
 //$nesnemiz = new Tugba();
+
 //nesne tipinde bir değişken oluşturdum.
 //Sınıfın içerisindeki özelliğe ulaşırken $ kullanılmaz.
 //Sınıfın içerisindeki özelliğe  değer atayabiliriz.
 //$nesnemiz->degisken = "deger";
 //Sınıfın içerisindeki davranışa(method) ulaşırken method ismi aynen yazılır.
- //$nesnemiz->Metod();
+
+//$nesnemiz->Metod();
+
 class Tree{
     public $genus;
     public $size;
     public $age;
 
     //KURUCU VE YIKICI METODLAR (construct,destruct)
+    
     //CONSTRUCT = bir sınıftan nesne oluşturulduğu zaman otamatik çalışan metoddur.
     //DESTRUCT = nesne yok edildiği anda çalışırlar.
     function __construct($genus=null,$size=null,$age=null){
