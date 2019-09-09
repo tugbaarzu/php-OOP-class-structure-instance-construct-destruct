@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <?php
+//SINIFIN YAPISI
+   class Tugba{
+    //Özellik ve Metodlarda public,private,protected gibi türler olabilir
+    
+        //özellik
+        public $degisken;
+        
+        //davranış(method)
+        public function Metod(){
+            echo "MERHABA DÜNYA <br>";
+        }
+        
+    }
+
+//SINIFLARIN ÇAĞIRILMASI-ÖRNEKLEME(instance)
+
+//new anahtar kelimesi ile sınıf tanımlanır
+//$nesnemiz = new Tugba();
+//nesne tipinde bir değişken oluşturdum.
+//Sınıfın içerisindeki özelliğe ulaşırken $ kullanılmaz.
+//Sınıfın içerisindeki özelliğe  değer atayabiliriz.
+//$nesnemiz->degisken = "deger";
+//Sınıfın içerisindeki davranışa(method) ulaşırken method ismi aynen yazılır.
+ //$nesnemiz->Metod();
+class Tree{
+    public $genus;
+    public $size;
+    public $age;
+
+    //KURUCU VE YIKICI METODLAR (construct,destruct)
+    //CONSTRUCT = bir sınıftan nesne oluşturulduğu zaman otamatik çalışan metoddur.
+    //DESTRUCT = nesne yok edildiği anda çalışırlar.
+    function __construct($genus=null,$size=null,$age=null){
+
+        $this->genus = $genus;
+        $this->size = $size;
+        $this->age = $age;
+
+        $this->treeProperty();
+    }
+
+    public function Grow(){
+        echo "Büyüdü.";
+    }
+    public function Fruit(){
+        echo "İncir Meyvesini verdi.";
+    }
+    public function Flower(){
+        echo "Mor Salkım çiçeği açtı.";
+    }
+    public function GetOld(){
+        echo "Yaşlandı.";
+    }
+    public function Death(){
+        echo "Öldü.";
+    }
+    //$this ile bu sınıfa ait özellikleri kullanabiliriz.
+    public function treeProperty(){
+        echo "Cinsi : " . $this->genus;
+        echo "<br>";
+        echo "Boyutu : " . $this->size;
+        echo "<br>";
+        echo "Yaşı : " . $this->age;
+        echo "<br>";
+    }
+
+}
+//Sınıftan nesneler üreteceğim.
+// sınıftan nesne oluşturulurken gönderilen parametreler __construct metoduna geçer.
+//parametre : bizim gönderdiğimiz
+//argument : alan method
+$tree1 = new Tree("İncir Ağacı","7 metre","4");
+$tree2 = new Tree("Mor Salkım Ağacı","5 metre","10");
+/*
+  $agac1 = new Tree;
+  $agac1->genus = 'İncir Ağacı';
+  $agac1->size = "7 metre";
+  $agac1->age = "4";
+ */
+  
+ /* 
+ $agac2 = new Tree();
+ $agac2->genus= 'Mor Salkım Ağacı';
+ $agac2->size = "5 metre";
+ $agac2->age = "10";  
+ */
+
+//Sınıftaki metodları çalıştıracağım.
+/*
+  $agac1->AgacOzellikleri();
+  $agac1->Grow();
+  $agac1->Fruit();
+  $agac1->GetOld();
+  $agac1->Death();
+
+  $agac2->AgacOzellikleri();
+  $agac2->Grow();
+  $agac2->Flower();
+  $agac2->GetOld();
+  $agac2->Death(); 
+ */
+    ?>
+</body>
+</html>
